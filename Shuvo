@@ -116,7 +116,7 @@ border-radius:15px;
 <h1>🎉 Happy Birthday My Love</h1>
 <p style="color:#ff4d6d">You are the most special person in my life 💕</p>
 <div class="circle">
-<img src="YOUR_IMAGE.jpg">
+<img src="IMAGE.jpg">
 </div>
 <button onclick="nextPage(2)">Click for Surprise 💌</button>
 </div>
