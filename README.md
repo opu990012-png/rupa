@@ -207,8 +207,14 @@ margin-top:20px;
 <div class="float" style="bottom:15%;right:10%;">😘</div>
 
 <button onclick="showFinalGift()">Open Gift 🎁</button>
-<img src="myphoto.jpg" id="finalPhoto">
-</div>
+<img src="photo.jpg" id="finalPhoto">
+</div>![photo jpg](https://github.com/user-attachments/assets/54c92446-a20f-40fa-a34e-1309e818c614)
+![memory4 jpg](https://github.com/user-attachments/assets/70eddb96-f3bb-4167-a725-989d45910520)
+![myphoto jpg](https://github.com/user-attachments/assets/0fed91d2-45b1-4b5b-974a-1943a9dcd315)
+![memory3 jpg](https://github.com/user-attachments/assets/7febc049-30e6-4d9f-904f-5591b16f06b2)
+![memory2 jpg](https://github.com/user-attachments/assets/d422148e-072a-41f6-a121-001035495d8b)
+![gf jpg](https://github.com/user-attachments/assets/e9dacc53-4eec-461a-9bd8-b19094809dd9)
+
 
 <script>
 
