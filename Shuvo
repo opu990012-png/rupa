@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Poppins', sans-serif;
+background:#ffe6eb;
+overflow:hidden;
+}
+
+.page{
+display:none;
+height:100vh;
+width:100%;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:absolute;
+top:0;
+left:0;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+color:#ff4d6d;
+font-size:32px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+background:#ff4d6d;
+color:white;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.circle{
+width:200px;
+height:200px;
+border-radius:50%;
+overflow:hidden;
+border:5px solid white;
+box-shadow:0 0 20px #ff4d6d;
+margin-top:20px;
+}
+
+.circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
+}
+
+.balloon{
+position:absolute;
+bottom:-100px;
+font-size:40px;
+animation:rise 6s linear infinite;
+}
+
+@keyframes rise{
+from{bottom:-100px}
+to{bottom:110%}
+}
+
+.glow{
+color:yellow;
+text-shadow:0 0 15px yellow;
+font-size:28px;
+}
+
+.lock{
+font-size:50px;
+}
+
+.photo-grid{
+display:grid;
+grid-template-columns:repeat(2,150px);
+gap:15px;
+}
+
+.photo-box{
+width:150px;
+height:150px;
+background:#ffb3c1;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<h1>🎉 Happy Birthday My Love</h1>
+<p style="color:#ff4d6d">You are the most special person in my life 💕</p>
+<div class="circle">
+<img src="YOUR_IMAGE.jpg">
+</div>
+<button onclick="nextPage(2)">Click for Surprise 💌</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<h1>DO YOU LOVE ME? 💖</h1>
+<button onclick="nextPage(3)">YES 💕</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<h1 style="color:red;font-size:40px;text-shadow:0 0 20px pink;">I LOVE YOU ❤️</h1>
+<button onclick="nextPage(4)">Next 💌</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+<h1>🎁 Choose One</h1>
+<button onclick="alert('⚠ আগে Memory দেখো!')">Gift</button>
+<button onclick="nextPage(5)">Memory</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+<h1>Tap to Unlock 🔐</h1>
+<div class="photo-grid">
+<div class="photo-box lock" onclick="nextPage(6)">🔒</div>
+<div class="photo-box lock" onclick="nextPage(6)">🔒</div>
+<div class="photo-box lock" onclick="nextPage(6)">🔒</div>
+<div class="photo-box lock" onclick="nextPage(6)">🔒</div>
+</div>
+</div>
+
+<!-- PAGE 6 GAME -->
+<div class="page" id="page6">
+<h1>Play Game 🎈</h1>
+<p>Touch 5 Balloons</p>
+<div id="gameArea"></div>
+<p id="count">0 / 5</p>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+<h1 class="glow">CONGRATULATIONS ✨</h1>
+<p style="color:#ff4d6d">রুপা বউ তুমি পেরেছো 💖</p>
+<button onclick="nextPage(8)">Next</button>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+<h1 style="color:#ff4d6d">I LOVE YOU FOREVER 💕</h1>
+<button onclick="nextPage(1)">Start Again</button>
+</div>
+
+<script>
+function nextPage(num){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('page'+num).classList.add('active');
+}
+
+let count=0;
+
+function createBalloon(){
+let b=document.createElement("div");
+b.className="balloon";
+b.innerHTML="🎈";
+b.style.left=Math.random()*90+"%";
+b.onclick=function(){
+b.remove();
+count++;
+document.getElementById("count").innerText=count+" / 5";
+if(count>=5){
+nextPage(7);
+}
+};
+document.getElementById("gameArea").appendChild(b);
+setTimeout(()=>b.remove(),6000);
+}
+
+setInterval(createBalloon,800);
+</script>
+
+</body>
+</html>
